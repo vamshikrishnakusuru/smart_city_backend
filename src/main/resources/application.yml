@@ -5,20 +5,17 @@ spring:
   application:
     name: smart-city-backend
   datasource:
-    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:smart_city_db}?ssl-mode=REQUIRED
-    username: ${DB_USER:root}
-    password: ${DB_PASSWORD:root}
+    url: ${SPRING_DATASOURCE_URL:${MYSQL_URL:${DATABASE_URL:jdbc:mysql://localhost:3306/smart_city_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}}}
+    username: ${SPRING_DATASOURCE_USERNAME:${MYSQLUSER:root}}
+    password: ${SPRING_DATASOURCE_PASSWORD:${MYSQLPASSWORD:2400032707}}
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: false
-    database-platform: org.hibernate.dialect.MySQLDialect
     properties:
       hibernate:
         format_sql: true
-        jdbc:
-          batch_size: 25
   jackson:
     serialization:
       write-dates-as-timestamps: false
@@ -31,10 +28,13 @@ springdoc:
 
 app:
   cors:
-    allowed-origins: ${ALLOWED_ORIGINS:http://localhost:3000,http://localhost:5173,https://smart-city-management-one.vercel.app}
+    allowed-origin-patterns:
+      - https://smart-city-management-one.vercel.app
+      - https://*.vercel.app
+      - http://localhost:*
   jwt:
-    expiration: 86400000
-    secret: ${JWT_SECRET:VGhpc0lzQVN0cm9uZ0RldmVsb3BtZW50SldUU2VjcmV0S2V5Rm9yU21hcnRDaXR5QXBwMTIzNDU2Nzg5MA==}
+    expiration: ${APP_JWT_EXPIRATION:86400000}
+    secret: ${JWT_SECRET:${APP_JWT_SECRET:VGhpc0lzQVN0cm9uZ0RldmVsb3BtZW50SldUU2VjcmV0S2V5Rm9yU21hcnRDaXR5QXBwMTIzNDU2Nzg5MA==}}
 
 management:
   endpoints:
