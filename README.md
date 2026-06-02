@@ -1,34 +1,106 @@
-# Smart City Backend
+# Smart City Management System - Backend
 
-Production-ready Spring Boot backend for the Smart City Management System frontend deployed at `https://smart-city-management-one.vercel.app`.
+Backend service for the Smart City Management System built using Spring Boot and MySQL. This backend handles authentication, issue management, service management, feedback handling, and communication between users and administrators.
 
-## Tech Stack
+---
 
-- Spring Boot 3
-- Spring Security with JWT
-- Spring Data JPA / Hibernate
-- MySQL
-- ModelMapper
-- Swagger / OpenAPI
+## Backend Deployment
+
+https://smart-city-backend-1-dhab.onrender.com
+
+---
+
+## Frontend Repository
+
+Frontend Repo:
+https://github.com/vamshikrishnakusuru/smart_city_frontend
+
+---
 
 ## Features
 
-- User and admin registration/login with JWT
-- Role-based access control using `USER` and `ADMIN`
-- Issue reporting and issue history for users
-- City-based issue management for admins
-- Automatic issue assignment to an admin from the same city when available
-- Global exception handling with structured API responses
-- Pagination on issue listing endpoints
-- CORS configured for the deployed frontend
+* RESTful API architecture
+* User and admin authentication
+* Role-based access control
+* City-based admin-user mapping
+* Issue reporting and tracking
+* Service management
+* Feedback handling
+* Dashboard data management
 
-## Run Locally
+---
 
-1. Create MySQL access for database `smart_city_db`.
-2. Update [`application.yml`](/c:/smartcity/smart-city-backend/src/main/resources/application.yml) if your local credentials differ.
-3. Start the app with `mvn spring-boot:run`.
+## Tech Stack
 
-## Swagger
+* Spring Boot
+* Java
+* MySQL
+* REST APIs
+* Postman
+* Render Deployment
 
-- `http://localhost:8080/swagger-ui.html`
-- `http://localhost:8080/v3/api-docs`
+---
+
+## API Functionalities
+
+### Authentication
+
+* User Login
+* Admin Login
+* Session Handling
+
+### User Operations
+
+* Report Issues
+* View Services
+* Submit Feedback
+* Track Issue Status
+
+### Admin Operations
+
+* Manage Services
+* View Reports
+* Update Issue Status
+* Dashboard Analytics
+
+---
+
+## Database
+
+MySQL database used for:
+
+* User management
+* Issue tracking
+* Service records
+* Feedback storage
+* Admin mappings
+
+---
+
+## Challenges Solved
+
+* Connected Spring Boot backend with React frontend
+* Managed database integration using MySQL
+* Implemented REST API communication
+* Deployed backend on Render
+* Configured CORS for frontend-backend communication
+* Managed role-based workflows
+
+---
+
+## Future Improvements
+
+* JWT-based authentication
+* Email notifications
+* Real-time updates
+* Improved API security
+* Cloud database deployment
+
+---
+
+## Author
+
+Vamshi Krishna Kusuru
+
+GitHub:
+https://github.com/vamshikrishnakusuru
